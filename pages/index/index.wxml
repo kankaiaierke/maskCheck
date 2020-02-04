@@ -14,13 +14,12 @@
             <wux-button bordered block class="camera-btn flex" bindtap="handleUpload">
               <wux-icon type="ios-camera" size="50" color="#ffffff" /> 点击拍照
             </wux-button>
-
           </view>
         </view>
       </view>
     </view>
   </view>
-  <wux-tabbar defaultCurrent="tab1" position="bottom" safeArea>
+  <wux-tabbar defaultCurrent="tab1" theme="positive" position="bottom" safeArea>
     <wux-tabbar-item key="tab1" title="图片鉴别">
       <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-on" />
       <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-off" />

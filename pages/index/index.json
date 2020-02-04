@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "口罩检测",
+  "navigationBarTextStyle": "white",
   "navigationBarBackgroundColor":"#FFBBD0",
   "usingComponents": {
     "wux-icon": "../../dist/icon/index",

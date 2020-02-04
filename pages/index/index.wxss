@@ -62,3 +62,12 @@ right: 30rpx;
 color:#fff;
 font-size:32rpx;
 }
+.tip{
+  margin-top: 20rpx;
+  color:#bbe1fa;
+  font-size:30rpx;
+  flex-flow: row;
+}
+.tip>text{
+  margin-left:10rpx;
+}

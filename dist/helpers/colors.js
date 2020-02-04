@@ -15,6 +15,7 @@ export const colors = {
     'assertive': '#ef473a',
     'royal': '#886aea',
     'dark': '#444',
+  'themeblue':'#bbe1fa'
 }
 
 export const isPresetColor = (color) => {

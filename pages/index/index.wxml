@@ -1,14 +1,33 @@
 <!--index.wxml-->
 <view class="container">
+  <view class="main">
+    <view class="header">
+      <image src="../../assets/images/background.jpg"></image>
+    </view>
+    <view class="form flex">
+      <view class="select flex">
+      是否带呼吸阀：<wux-switch name="light" color="themeblue" value="{{ isValve }}" bind:change="handleChangeType" />
+      </view>
+      <view class="circle-1 flex">
+        <view class="circle-2 flex">
+          <view class="circle-3 flex">
+            <wux-button bordered block class="camera-btn flex" bindtap="handleUpload">
+              <wux-icon type="ios-camera" size="50" color="#ffffff" /> 点击拍照
+            </wux-button>
 
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
   <wux-tabbar defaultCurrent="tab1" position="bottom" safeArea>
-            <wux-tabbar-item key="tab1" title="图片鉴别">
-                <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-on" />
-                <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-off" />
-            </wux-tabbar-item>
-            <wux-tabbar-item key="tab2" title="问卷鉴别">
-                <wux-icon wux-class="icon" type="ios-create" size="22" slot="icon-on" />
-                <wux-icon wux-class="icon" type="ios-create" size="22" slot="icon-off" />
-            </wux-tabbar-item>
-        </wux-tabbar>
+    <wux-tabbar-item key="tab1" title="图片鉴别">
+      <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-on" />
+      <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-off" />
+    </wux-tabbar-item>
+    <wux-tabbar-item key="tab2" title="问卷鉴别">
+      <wux-icon wux-class="icon" type="ios-create" size="22" slot="icon-on" />
+      <wux-icon wux-class="icon" type="ios-create" size="22" slot="icon-off" />
+    </wux-tabbar-item>
+  </wux-tabbar>
 </view>

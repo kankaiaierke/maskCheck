@@ -1,9 +1,14 @@
 {
-  "navigationBarTitleText": "maskCheck",
+  "navigationBarTitleText": "口罩检测",
+  "navigationBarBackgroundColor":"#FFBBD0",
   "usingComponents": {
     "wux-icon": "../../dist/icon/index",
     "wux-badge": "../../dist/badge/index",
     "wux-tabbar": "../../dist/tabbar/index",
-    "wux-tabbar-item": "../../dist/tabbar-item/index"
+    "wux-tabbar-item": "../../dist/tabbar-item/index",
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-switch": "../../dist/switch/index"
+    
   }
 }

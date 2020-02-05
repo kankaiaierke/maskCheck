@@ -128,11 +128,12 @@ Page({
   //提交
   onSubmit(){
     console.log(this.data.answer);
+    var answer = this.data.answer;
     wx.request({
       url: 'https://recognitionapi.yuanjy.com/v1/index/recognition', //仅为示例，并非真实的接口地址
       data: {
         image:'',
-        answer: this.data.answer,
+        answer: answer,
       },
       header: {
         'content-type': 'application/json'

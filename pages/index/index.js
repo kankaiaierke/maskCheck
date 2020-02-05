@@ -17,6 +17,7 @@ Page({
       {
         id:'1',
         title:'口罩有无异味',
+        type: 'radio',
         key:'smell',
         options:[
           {
@@ -36,6 +37,7 @@ Page({
       {
         id: '2',
         title: '口罩标准是否清晰',
+        type:'radio',
         key: 'clear',
         options: [
           {
@@ -51,6 +53,12 @@ Page({
             name: '有一些模糊'
           },
         ]
+      },
+      {
+        id: '3',
+        title: '备注',
+        type: 'textarea',
+        key: 'memo',
       },
     ],
     smellShow:true,

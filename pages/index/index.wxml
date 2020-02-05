@@ -28,18 +28,24 @@
     <view class="page__bd">
         <view class="sub-title"></view>
         <wux-form id="wux-form" bind:change="onChange">
-            <wux-field wx:for="{{askData}}" wx:for-item="item" name="{{item.key}}" initialValue="{{ formData[item.key] }}">
-                <wux-radio-group title="{{item.title}}">
-                    <wux-radio wx:for="{{item.options}}" wx:for-item="option" title="{{option.name}}" value="{{option.value}}" />
-                </wux-radio-group>
-            </wux-field>
-            <wux-cell-group title="备注">
-                <wux-cell hover-class="none">
-                    <wux-field name="memo" initialValue="{{ formData.memo }}">
-                        <wux-textarea rows="3" />
-                    </wux-field>
-                </wux-cell>
-            </wux-cell-group>
+            <view wx:for="{{askData}}" wx:for-item="item">
+              <view wx:if="{{item.type=='radio'}}">
+                <wux-field name="{{item.key}}" initialValue="{{ formData[item.key] }}">
+                  <wux-radio-group title="{{item.title}}">
+                      <wux-radio wx:for="{{item.options}}" wx:for-item="option" title="{{option.name}}" value="{{option.value}}" />
+                  </wux-radio-group>
+              </wux-field>
+              </view>
+              <view wx:if="{{item.type=='textarea'}}">
+                <wux-cell-group title="{{item.title}}">
+                  <wux-cell hover-class="none">
+                      <wux-field name="{{item.key}}" initialValue="{{ formData[item.key] }}">
+                          <wux-textarea rows="3" />
+                      </wux-field>
+                  </wux-cell>
+                </wux-cell-group>
+              </view>
+            </view>
             <wux-upload listType="picture-card" showUploadList="{{ false }}" url="https://www.skyvow.cn/api/common/file" bind:change="onUpdata" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:preview="onPreview">
             <image src="{{ imageUrl }}" wx:if="{{ imageUrl }}" />
             <text wx:else>上传\n图片</text>

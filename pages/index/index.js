@@ -12,6 +12,7 @@ Page({
       clear: 'A',
       memo: '',
     },
+    //表单数据数组
     askData:[
       {
         id:'1',
@@ -110,11 +111,53 @@ Page({
   onChange(e) {
     const { form, changedValues, allValues } = e.detail
     console.log('onChange \n', changedValues, allValues)
+    //表单改变的时候修改数据
     this.setData({
       formData: allValues
     })
   },
+  onSuccess(e) {
+    console.log('onSuccess', e)
+  },
   onSubmit(){
     console.log(this.data.formData);
+  },
+  onUpdata(e) {
+    console.log('onChange', e)
+    const { file, fileList } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0,
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      this.setData({
+        imageUrl: file.url,
+      })
+    }
+
+    // Controlled state should set fileList
+    this.setData({ fileList })
+  },
+  onFail(e) {
+    console.log('onFail', e)
+  },
+  onComplete(e) {
+    console.log('onComplete', e)
+    wx.hideLoading()
+  },
+  onProgress(e) {
+    console.log('onProgress', e)
+    this.setData({
+      progress: e.detail.file.progress,
+    })
+  },
+  onPreview(e) {
+    console.log('onPreview', e)
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
   },
 })

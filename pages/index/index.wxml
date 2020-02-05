@@ -40,6 +40,10 @@
                     </wux-field>
                 </wux-cell>
             </wux-cell-group>
+            <wux-upload listType="picture-card" showUploadList="{{ false }}" url="https://www.skyvow.cn/api/common/file" bind:change="onUpdata" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:preview="onPreview">
+            <image src="{{ imageUrl }}" wx:if="{{ imageUrl }}" />
+            <text wx:else>上传\n图片</text>
+        </wux-upload>
             <view class="btn-area">
                 <button class="submit" bindtap="onSubmit">提交</button>
             </view>

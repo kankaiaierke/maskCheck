@@ -7,17 +7,12 @@ Page({
     imgList:[],
     isValve:false,
     showType:1,
-    formData:{
-      smell: 'A',
-      clear: 'A',
-      memo: '',
-    },
+    formData:{},
     //表单数据数组
     askData:[
       {
         id:'1',
         title:'口罩有无异味',
-        key:'smell',
         options:{
           'A': '没有',
           'B': '有一点',
@@ -30,7 +25,6 @@ Page({
       {
         id: '2',
         title: '口罩标准是否清晰',
-        key: 'clear',
         options: {
           'A': '很清晰',
           'B': '较清晰',
@@ -39,8 +33,6 @@ Page({
         example_pic:['https://hd2-health-out.oss-cn-shanghai-finance-1-pub.aliyuncs.com/guohua/2020-02-05/999de7071638381e164283397cc820e3.jpg'],
       },
     ],
-    smellShow:true,
-    clearShow:true,
   },
   onLoad: function () {
     
@@ -90,6 +82,39 @@ Page({
     })
   },
   showTypeChange(e){
+    var showType = e.currentTarget.dataset.index;
+    if (showType == 2){
+      this.setData({
+        formData: {
+          '1': 'A',
+          '2': 'A',
+        },
+        askData: [
+          {
+            id: '1',
+            title: '口罩有无异味',
+            options: {
+              'A': '没有',
+              'B': '有一点',
+              'C': '比较重的异味',
+            },
+            example_pic: [
+
+            ],
+          },
+          {
+            id: '2',
+            title: '口罩标准是否清晰',
+            options: {
+              'A': '很清晰',
+              'B': '较清晰',
+              'C': '有一些模糊',
+            },
+            example_pic: ['https://hd2-health-out.oss-cn-shanghai-finance-1-pub.aliyuncs.com/guohua/2020-02-05/999de7071638381e164283397cc820e3.jpg'],
+          },
+        ],
+      })
+    }
     this.setData({
       showType: e.currentTarget.dataset.index
     })
@@ -107,43 +132,5 @@ Page({
   },
   onSubmit(){
     console.log(this.data.formData);
-  },
-  onUpdata(e) {
-    console.log('onChange', e)
-    const { file, fileList } = e.detail
-    if (file.status === 'uploading') {
-      this.setData({
-        progress: 0,
-      })
-      wx.showLoading()
-    } else if (file.status === 'done') {
-      this.setData({
-        imageUrl: file.url,
-      })
-    }
-
-    // Controlled state should set fileList
-    this.setData({ fileList })
-  },
-  onFail(e) {
-    console.log('onFail', e)
-  },
-  onComplete(e) {
-    console.log('onComplete', e)
-    wx.hideLoading()
-  },
-  onProgress(e) {
-    console.log('onProgress', e)
-    this.setData({
-      progress: e.detail.file.progress,
-    })
-  },
-  onPreview(e) {
-    console.log('onPreview', e)
-    const { file, fileList } = e.detail
-    wx.previewImage({
-      current: file.url,
-      urls: fileList.map((n) => n.url),
-    })
   },
 })

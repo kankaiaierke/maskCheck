@@ -134,6 +134,7 @@ Page({
       data: {
         image:'',
         answer: answer,
+        image_type:'',
       },
       header: {
         'content-type': 'application/json'

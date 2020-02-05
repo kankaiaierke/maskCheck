@@ -28,13 +28,13 @@
     <view class="page__bd">
         <view class="sub-title"></view>
         <wux-form id="wux-form" bind:change="onChange">
-            <view wx:for="{{askData}}" wx:for-item="item">
+            <view wx:for="{{askData}}" wx:for-item="item" wx:for-index="eq">
               <wux-wing-blank size="default">
                   <wux-card title="{{item.title}}" extra="">
                       <view slot="body">
-                        <wux-row wx:for="{{item.example_pic}}" wx:for-item="image">
-                            <wux-col span="4">
-                                <wux-image wux-class="image" src="{{image}}" loading="Loading" />
+                        <wux-row>
+                            <wux-col wx:for="{{item.example_pic}}" wx:for-item="image" span="4">
+                                <wux-image bindtap='onPreview' wux-class="image" data-index="{{eq}}" data-url="{{image}}" src="{{image}}" loading="Loading" />
                             </wux-col>
                         </wux-row>
                         <wux-field name="{{item.id}}" initialValue="{{ formData[item.id] }}">

@@ -110,7 +110,7 @@ Page({
               'B': '较清晰',
               'C': '有一些模糊',
             },
-            example_pic: ['https://hd2-health-out.oss-cn-shanghai-finance-1-pub.aliyuncs.com/guohua/2020-02-05/999de7071638381e164283397cc820e3.jpg'],
+            example_pic: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580892444369&di=9f555b6636ef876c64275359ef12e452&imgtype=0&src=http%3A%2F%2Fimg31.ddimg.cn%2F19%2F3%2F1117056421-1_w.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580892444368&di=9bf529f2b6345c613c52b11eeef39095&imgtype=0&src=http%3A%2F%2Fpic3.zhimg.com%2F50%2Fv2-b367acd66a4dff8479cf2ff84616acf5_hd.jpg'],
           },
         ],
       })
@@ -127,10 +127,17 @@ Page({
       formData: allValues
     })
   },
-  onSuccess(e) {
-    console.log('onSuccess', e)
-  },
+  //提交
   onSubmit(){
     console.log(this.data.formData);
+  },
+  //预览
+  onPreview(e) {
+    console.log(e.detail);
+    var list = this.data.askData[e.currentTarget.dataset.index].example_pic;
+    wx.previewImage({
+      current: e.currentTarget.dataset.url,
+      urls: list,
+    })
   },
 })

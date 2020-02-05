@@ -1,17 +1,15 @@
 Page({
   data: {
     title:"",
-    buttons: [{
-        type: 'balanced',
-        block: true,
-        text: '确定',
-      },
-      {
-        type: 'light',
-        block: true,
-        text: '返回',
-      },
-    ],
+    isSure:true,
+    from:'image'
+  },
+  onLoad: function (options) {
+    console.log(options);
+    this.setData({
+      isSure: options.resultCode === '1' ? true:false,
+      from:options.from
+    })
   },
   onClick(e) {
     console.log(e)

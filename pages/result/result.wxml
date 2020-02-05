@@ -1,9 +1,9 @@
-<view class="container">
-<view class="card-1 flex">
-<view class="card-2 flex">
-<view class="card-3 flex">
-
-</view>
-</view>
-</view>
+<view class="container flex">
+  <view class="card-1 flex">
+    <view class="card-2 flex">
+      <view class="card-3 flex">
+        <wux-icon type="{{isSure?'ios-checkmark-circle':'ios-alert'}}" size="100" color="{{isSure?'#FFBBD0':'#ffd082'}}" />
+      </view>
+    </view>
+  </view>
 </view>

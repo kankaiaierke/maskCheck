@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="main" hidden="{{showType == 2}}">
-    <view class="header">
+    <view class="header flex">
       <image src="../../assets/images/background.jpg"></image>
       <view>武汉加油</view>
     </view>

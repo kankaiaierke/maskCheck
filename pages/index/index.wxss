@@ -2,7 +2,7 @@
 /**index.wxss**/
 @import '../../dist/styles/index.wxss';
 .container{
-  background-color: #FFBBD0;
+  
   height: 100%;
 }
 .main{
@@ -17,10 +17,10 @@
   position: fixed;
   top:0;
  z-index: 1;
+ flex-flow: column;
 }
 .header>image{
-  width: 100%;
- border-radius: 0 0 20% 20%;
+ /* border-radius: 0 0 20% 20%; */
 }
 .header>view{
   width: 100%;
@@ -30,7 +30,7 @@
 }
 .form{
   position: relative;
-top:240rpx;
+top:350rpx;
 width: 80%;
 height:800rpx;
 background: #e1f2fb;

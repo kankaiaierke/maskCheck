@@ -7,6 +7,13 @@ Page({
     imgList:[],
     isValve:false,
     showType:1,
+    formData:{
+      smell: 'A',
+      clear: 'A',
+      memo: '',
+    },
+    smellShow:true,
+    clearShow:true,
   },
   onLoad: function () {
     
@@ -59,5 +66,15 @@ Page({
     this.setData({
       showType: e.currentTarget.dataset.index
     })
+  },
+  onChange(e) {
+    const { form, changedValues, allValues } = e.detail
+    console.log('onChange \n', changedValues, allValues)
+    this.setData({
+      formData: allValues
+    })
+  },
+  onSubmit(){
+    console.log(this.data.formData);
   },
 })

@@ -25,91 +25,32 @@
   </view>
   <view class="asked" hidden="{{showType == 1}}">
     <view class="page">
-    <view class="page__hd">
-        <view class="page__title">Form</view>
-        <view class="page__desc">表单</view>
-    </view>
     <view class="page__bd">
-        <view class="sub-title">Wux Form</view>
+        <view class="sub-title"></view>
         <wux-form id="wux-form" bind:change="onChange">
-            <wux-field name="checkbox" initialValue="{{ checkbox }}">
-                <wux-checkbox-group>
-                    <wux-checkbox title="Java" value="1" />
-                    <wux-checkbox title="PHP" value="2" />
-                </wux-checkbox-group>
-            </wux-field>
-            <wux-field name="radio" initialValue="{{ radio }}">
-                <wux-radio-group title="Radio">
-                    <wux-radio title="Java" value="1" />
-                    <wux-radio title="PHP" value="2" />
+            <wux-field hidden="{{!smellShow}}" name="smell" initialValue="{{ formData.smell }}">
+                <wux-radio-group title="口罩有无异味">
+                    <wux-radio title="没有" value="A" />
+                    <wux-radio title="有一点" value="B" />
+                    <wux-radio title="比较重的异味" value="C" />
                 </wux-radio-group>
             </wux-field>
-            <wux-cell-group title="Switch">
-                <wux-cell>
-                    <wux-field name="switch" initialValue="{{ switch }}" valuePropName="inputChecked" slot="footer">
-                        <wux-switch />
-                    </wux-field>
-                </wux-cell>
-            </wux-cell-group>
-            <wux-cell-group title="Input">
+            <wux-field hidden="{{!clearShow}}" name="clear" initialValue="{{ formData.clear }}">
+                <wux-radio-group title="口罩标准是否清晰">
+                    <wux-radio title="很清晰" value="A" />
+                    <wux-radio title="较清晰" value="B" />
+                    <wux-radio title="有一些模糊" value="C" />
+                </wux-radio-group>
+            </wux-field>
+            <wux-cell-group title="备注">
                 <wux-cell hover-class="none">
-                    <wux-field name="input" initialValue="123">
-                        <wux-input label="Input" />
-                    </wux-field>
-                </wux-cell>
-            </wux-cell-group>
-            <wux-cell-group title="Rater">
-                <wux-cell hover-class="none">
-                    <wux-field name="rater" initialValue="{{ 2 }}" slot="footer">
-                        <wux-rater />
-                    </wux-field>
-                </wux-cell>
-            </wux-cell-group>
-            <wux-cell-group title="InputNumber">
-                <wux-cell hover-class="none">
-                    <wux-field name="inputNumber" initialValue="{{ 20 }}">
-                        <wux-input-number />
-                    </wux-field>
-                </wux-cell>
-            </wux-cell-group>
-            <wux-cell-group title="Textarea">
-                <wux-cell hover-class="none">
-                    <wux-field name="textarea" initialValue="456">
+                    <wux-field name="memo" initialValue="{{ formData.memo }}">
                         <wux-textarea rows="3" />
                     </wux-field>
                 </wux-cell>
             </wux-cell-group>
-            <wux-cell-group title="Slider">
-                <wux-cell hover-class="none">
-                    <wux-field name="slider" initialValue="{{ [10, 80] }}">
-                        <wux-slider />
-                    </wux-field>
-                </wux-cell>
-            </wux-cell-group>
-            <wux-cell-group title="Picker">
-                <wux-field name="picker" initialValue="{{ picker }}">
-                    <wux-picker options="{{ options1 }}" cascade bind:change="onValueChange">
-                        <wux-cell title="Picker" is-link extra="{{ picker }}"></wux-cell>
-                    </wux-picker>
-                </wux-field>
-            </wux-cell-group>
-            <wux-cell-group title="DatePicker">
-                <wux-field name="datePicker" initialValue="{{ datePicker }}">
-                    <wux-date-picker bind:change="onDatePickerChange">
-                        <wux-cell title="DatePicker" is-link extra="{{ datePicker }}"></wux-cell>
-                    </wux-date-picker>
-                </wux-field>
-            </wux-cell-group>
-            <wux-cell-group title="PopupSelect">
-                <wux-field name="popupSelect" initialValue="{{ popupSelect }}">
-                    <wux-popup-select options="{{ options2 }}" bind:change="onPopupSelectChange">
-                        <wux-cell title="PopupSelect" is-link extra="{{ popupSelect }}"></wux-cell>
-                    </wux-popup-select>
-                </wux-field>
-            </wux-cell-group>
             <view class="btn-area">
                 <button class="submit" bindtap="onSubmit">提交</button>
-                <button bindtap="onReset">重置</button>
             </view>
         </wux-form>
     </view>

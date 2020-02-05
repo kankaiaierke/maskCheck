@@ -130,11 +130,10 @@ Page({
     console.log(this.data.answer);
     var answer = this.data.answer;
     wx.request({
-      url: 'https://recognitionapi.yuanjy.com/v1/index/recognition', //仅为示例，并非真实的接口地址
+      url: 'https://recognitionapi.yuanjy.com/v1/index/recognition-question', //仅为示例，并非真实的接口地址
+      method: "POST",
       data: {
-        image:'',
         answer: answer,
-        image_type:'',
       },
       header: {
         'content-type': 'application/json'

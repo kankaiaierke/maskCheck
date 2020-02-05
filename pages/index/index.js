@@ -35,7 +35,37 @@ Page({
     ],
   },
   onLoad: function () {
-    
+    //测试数据
+    this.setData({
+      formData: {
+        '1': 'A',
+        '2': 'A',
+      },
+      askData: [
+        {
+          id: '1',
+          title: '口罩有无异味',
+          options: {
+            'A': '没有',
+            'B': '有一点',
+            'C': '比较重的异味',
+          },
+          example_pic: [
+
+          ],
+        },
+        {
+          id: '2',
+          title: '口罩标准是否清晰',
+          options: {
+            'A': '很清晰',
+            'B': '较清晰',
+            'C': '有一些模糊',
+          },
+          example_pic: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580892444369&di=9f555b6636ef876c64275359ef12e452&imgtype=0&src=http%3A%2F%2Fimg31.ddimg.cn%2F19%2F3%2F1117056421-1_w.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580892444368&di=9bf529f2b6345c613c52b11eeef39095&imgtype=0&src=http%3A%2F%2Fpic3.zhimg.com%2F50%2Fv2-b367acd66a4dff8479cf2ff84616acf5_hd.jpg'],
+        },
+      ],
+    })
   },
   handleChangeType(e){
     this.setData({
@@ -83,38 +113,6 @@ Page({
   },
   showTypeChange(e){
     var showType = e.currentTarget.dataset.index;
-    if (showType == 2){
-      this.setData({
-        formData: {
-          '1': 'A',
-          '2': 'A',
-        },
-        askData: [
-          {
-            id: '1',
-            title: '口罩有无异味',
-            options: {
-              'A': '没有',
-              'B': '有一点',
-              'C': '比较重的异味',
-            },
-            example_pic: [
-
-            ],
-          },
-          {
-            id: '2',
-            title: '口罩标准是否清晰',
-            options: {
-              'A': '很清晰',
-              'B': '较清晰',
-              'C': '有一些模糊',
-            },
-            example_pic: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580892444369&di=9f555b6636ef876c64275359ef12e452&imgtype=0&src=http%3A%2F%2Fimg31.ddimg.cn%2F19%2F3%2F1117056421-1_w.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580892444368&di=9bf529f2b6345c613c52b11eeef39095&imgtype=0&src=http%3A%2F%2Fpic3.zhimg.com%2F50%2Fv2-b367acd66a4dff8479cf2ff84616acf5_hd.jpg'],
-          },
-        ],
-      })
-    }
     this.setData({
       showType: e.currentTarget.dataset.index
     })

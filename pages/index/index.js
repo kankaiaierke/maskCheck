@@ -5,7 +5,8 @@ const app = getApp()
 Page({
   data: {
     imgList:[],
-    isValve:false
+    isValve:false,
+    showType:1,
   },
   onLoad: function () {
     
@@ -53,5 +54,11 @@ Page({
         wx.hideToast(); //隐藏Toast
       }
     })
-  }
+  },
+  showTypeChange(e){
+    console.log(e);
+    this.setData({
+      showType: e.currentTarget.dataset.index
+    })
+  },
 })

@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="main">
+  <view class="main" hidden="{{showType == 2}}">
     <view class="header">
       <image src="../../assets/images/background.jpg"></image>
     </view>
@@ -22,14 +22,16 @@
     <wux-icon type="ios-help-circle-outline" size="25" color="#bbe1fa" /><text>友情提示</text>
     </view>
     </view>
+  </view>
+  <view class="main" hidden="{{showType == 1}}">
     
   </view>
   <wux-tabbar defaultCurrent="tab1" theme="positive" position="bottom" safeArea>
-    <wux-tabbar-item key="tab1" title="图片检测">
+    <wux-tabbar-item key="tab1" title="图片检测" bindtap='showTypeChange' data-index="1">
       <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-on" />
       <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-off" />
     </wux-tabbar-item>
-    <wux-tabbar-item key="tab2" title="问卷检测">
+    <wux-tabbar-item key="tab2" title="问卷检测" bindtap='showTypeChange' data-index="2">
       <wux-icon wux-class="icon" type="ios-create" size="22" slot="icon-on" />
       <wux-icon wux-class="icon" type="ios-create" size="22" slot="icon-off" />
     </wux-tabbar-item>

@@ -18,21 +18,12 @@ Page({
         id:'1',
         title:'口罩有无异味',
         key:'smell',
-        options:[
-          {
-            value:'A',
-            name:'没有'
-          },
-          {
-            value: 'B',
-            name: '有一点'
-          },
-          {
-            value: 'C',
-            name: '比较重的异味'
-          },
-        ],
-        imageList:[
+        options:{
+          'A': '没有',
+          'B': '有一点',
+          'C': '比较重的异味',
+        },
+        example_pic:[
 
         ],
       },
@@ -40,21 +31,12 @@ Page({
         id: '2',
         title: '口罩标准是否清晰',
         key: 'clear',
-        options: [
-          {
-            value: 'A',
-            name: '很清晰'
-          },
-          {
-            value: 'B',
-            name: '较清晰'
-          },
-          {
-            value: 'C',
-            name: '有一些模糊'
-          },
-        ],
-        imageList:['https://hd2-health-out.oss-cn-shanghai-finance-1-pub.aliyuncs.com/guohua/2020-02-05/999de7071638381e164283397cc820e3.jpg'],
+        options: {
+          'A': '很清晰',
+          'B': '较清晰',
+          'C': '有一些模糊',
+        },
+        example_pic:['https://hd2-health-out.oss-cn-shanghai-finance-1-pub.aliyuncs.com/guohua/2020-02-05/999de7071638381e164283397cc820e3.jpg'],
       },
     ],
     smellShow:true,

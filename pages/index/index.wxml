@@ -1,3 +1,5 @@
+<!--弹窗-->
+<wux-toast id="wux-toast" />
 <!--index.wxml-->
 <view class="container">
   <view class="main" hidden="{{showType == 2}}">
@@ -51,6 +53,10 @@
             </view>
             <view class="btn-area">
                 <button class="submit" bindtap="onSubmit">提交</button>
+            </view>
+            <view class="tip flex" bindtap="showToastCancel">
+              <wux-icon type="ios-add-circle-outline" size="25" color="#bbe1fa" />
+              <text>添加线索</text>
             </view>
         </wux-form>
     </view>

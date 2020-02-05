@@ -2,6 +2,9 @@
 //获取应用实例
 const app = getApp()
 
+//弹窗
+import { $wuxToast } from '../../dist/index'
+
 Page({
   data: {
     imgList:[],
@@ -150,6 +153,18 @@ Page({
     wx.previewImage({
       current: e.currentTarget.dataset.url,
       urls: list,
+    })
+  },
+  //暂未开放
+  showToastCancel() {
+    $wuxToast().show({
+      type: 'forbidden',
+      duration: 1500,
+      color: '#fff',
+      text: '暂未开放',
+      success: () => {
+
+      },
     })
   },
 })

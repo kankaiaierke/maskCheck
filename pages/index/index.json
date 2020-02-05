@@ -29,6 +29,7 @@
     "wux-wing-blank": "../../dist/wing-blank/index",
     "wux-row": "../../dist/row/index",
     "wux-col": "../../dist/col/index",
-    "wux-image": "../../dist/image/index"
+    "wux-image": "../../dist/image/index",
+    "wux-toast": "../../dist/toast/index"
   }
 }

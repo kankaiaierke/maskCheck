@@ -75,4 +75,19 @@ font-size:32rpx;
 /**表单**/
 .asked{
   width: 100%;
+  margin-top: -200rpx;
+}
+
+.btn-area{
+  margin-top: 10rpx;
+}
+
+.btn-area button{
+  width: 100%;
+  color :#555;
+}
+
+.btn-area .submit{
+  color:#fff;
+  background:#bbe1fa; 
 }

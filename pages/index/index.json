@@ -10,6 +10,8 @@
     "wux-cell-group": "../../dist/cell-group/index",
     "wux-cell": "../../dist/cell/index",
     "wux-switch": "../../dist/switch/index",
+    "wux-popup": "../../dist/popup/index",
+    "wux-button": "../../dist/button/index",
     "wux-form": "../../dist/form/index",
     "wux-field": "../../dist/field/index",
     "wux-slider": "../../dist/slider/index",

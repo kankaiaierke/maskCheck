@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "检测结果",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#FFBBD0",
+  "usingComponents": {
+    "wux-result": "../../dist/result/index"
+  }
+}

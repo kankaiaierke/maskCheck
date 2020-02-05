@@ -4,19 +4,30 @@ const app = getApp()
 
 Page({
   data: {
-    imgList:[],
-    isValve:false,
-    showType:1,
+    imgList: [],
+    isValve: false,
+    showType: 1,
+    visible: false,
   },
   onLoad: function () {
-    
+
   },
-  handleChangeType(e){
+  handleClose() {
+    this.setData({
+      visible: false
+    })
+  },
+  handleOpen() {
+    this.setData({
+      visible: true
+    })
+  },
+  handleChangeType(e) {
     this.setData({
       isValve: e.detail.value
     })
   },
-  handleUpload(){
+  handleUpload() {
     let that = this;
     wx.chooseImage({
       count: 1, // 默认9
@@ -31,9 +42,12 @@ Page({
   upload(page, path) { // 上传图片
     wx.showToast({ icon: "loading", title: "上传图片……" });
     wx.uploadFile({
-      url: '上传图片接口url', //后端接口
+      url: 'https://recognitionapi.yuanjy.com/v1/index/recognition', //后端接口
       filePath: path[0],
       name: 'file',
+      formData: {
+        image_type: this.isValve?'valve':'print'
+      },
       header: {
         "Content-Type": "multipart/form-data"
       },
@@ -42,8 +56,9 @@ Page({
           wx.showModal({ title: '提示', content: '上传失败，请重新上传', showCancel: false });
           return;
         } else {
-          this.setData({
-            imgList:res
+          let result = res.body
+          wx.navigateTo({
+            url: '../result/result',
           })
         }
       },
@@ -55,7 +70,7 @@ Page({
       }
     })
   },
-  showTypeChange(e){
+  showTypeChange(e) {
     this.setData({
       showType: e.currentTarget.dataset.index
     })

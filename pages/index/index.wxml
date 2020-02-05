@@ -3,6 +3,7 @@
   <view class="main" hidden="{{showType == 2}}">
     <view class="header">
       <image src="../../assets/images/background.jpg"></image>
+      <view>武汉加油</view>
     </view>
     <view class="form flex">
       <view class="select flex">
@@ -12,17 +13,28 @@
       <view class="circle-1 flex">
         <view class="circle-2 flex">
           <view class="circle-3 flex">
-            <wux-button bordered block class="camera-btn flex" bindtap="handleUpload">
-              <wux-icon type="ios-camera" size="50" color="#ffffff" /> 点击拍照
-            </wux-button>
+              <wux-icon type="ios-camera" size="50" color="#ffffff" bindtap="handleUpload" /> <text bindtap="handleUpload">点击拍照
+           </text>
           </view>
         </view>
       </view>
       <view class="tip flex">
-    <wux-icon type="ios-help-circle-outline" size="25" color="#bbe1fa" /><text>友情提示</text>
-    </view>
+        <wux-icon type="ios-help-circle-outline" size="25" color="#bbe1fa" bindtap="handleOpen" />
+        <text bindtap="handleOpen">友情提示</text>
+      </view>
     </view>
   </view>
+   <wux-popup position="bottom" closable visible="{{ visible }}" title="友情提示" bind:close="handleClose">
+    <view class="pop-content flex">
+    <p>1. xxxxx</p>
+    <p>2. xxxxx</p>
+    <p>3. xxxxx</p>
+    <p>4. xxxxx</p>
+    <wux-button bordered full block bindtap="handleClose">ok</wux-button >
+    </view>
+    
+
+  </wux-popup>
   <view class="asked" hidden="{{showType == 1}}">
     <view class="page">
     <view class="page__hd">

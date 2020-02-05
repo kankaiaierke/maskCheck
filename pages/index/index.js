@@ -4,22 +4,78 @@ const app = getApp()
 
 Page({
   data: {
-    imgList: [],
-    isValve: false,
-    showType: 1,
+    imgList:[],
+    isValve:false,
+    showType:1,
+    answer:{},
     visible: false,
+    //表单数据数组
+    askData:[
+      {
+        id:'1',
+        title:'口罩有无异味',
+        options:{
+          'A': '没有',
+          'B': '有一点',
+          'C': '比较重的异味',
+        },
+        example_pic:[
+
+        ],
+      },
+      {
+        id: '2',
+        title: '口罩标准是否清晰',
+        options: {
+          'A': '很清晰',
+          'B': '较清晰',
+          'C': '有一些模糊',
+        },
+        example_pic:['https://hd2-health-out.oss-cn-shanghai-finance-1-pub.aliyuncs.com/guohua/2020-02-05/999de7071638381e164283397cc820e3.jpg'],
+      },
+    ],
   },
   onLoad: function () {
-
-  },
-  handleClose() {
+    //测试数据
     this.setData({
-      visible: false
+      answer: {
+        '1': 'A',
+        '2': 'A',
+      },
+      askData: [
+        {
+          id: '1',
+          title: '口罩有无异味',
+          options: {
+            'A': '没有',
+            'B': '有一点',
+            'C': '比较重的异味',
+          },
+          example_pic: [
+
+          ],
+        },
+        {
+          id: '2',
+          title: '口罩标准是否清晰',
+          options: {
+            'A': '很清晰',
+            'B': '较清晰',
+            'C': '有一些模糊',
+          },
+          example_pic: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580892444369&di=9f555b6636ef876c64275359ef12e452&imgtype=0&src=http%3A%2F%2Fimg31.ddimg.cn%2F19%2F3%2F1117056421-1_w.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580892444368&di=9bf529f2b6345c613c52b11eeef39095&imgtype=0&src=http%3A%2F%2Fpic3.zhimg.com%2F50%2Fv2-b367acd66a4dff8479cf2ff84616acf5_hd.jpg'],
+        },
+      ],
     })
   },
   handleOpen() {
     this.setData({
       visible: true
+    })
+  },
+  handleClose(){
+    this.setData({
+      visible: false,
     })
   },
   handleChangeType(e) {
@@ -76,6 +132,41 @@ Page({
   showTypeChange(e) {
     this.setData({
       showType: e.currentTarget.dataset.index
+    })
+  },
+  onChange(e) {
+    const { form, changedValues, allValues } = e.detail
+    console.log('onChange \n', changedValues, allValues)
+    //表单改变的时候修改数据
+    this.setData({
+      answer: allValues
+    })
+  },
+  //提交
+  onSubmit(){
+    console.log(this.data.answer);
+    var answer = this.data.answer;
+    wx.request({
+      url: 'https://recognitionapi.yuanjy.com/v1/index/recognition-question', //仅为示例，并非真实的接口地址
+      method: "POST",
+      data: {
+        answer: answer,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+    })
+  },
+  //预览
+  onPreview(e) {
+    console.log(e.detail);
+    var list = this.data.askData[e.currentTarget.dataset.index].example_pic;
+    wx.previewImage({
+      current: e.currentTarget.dataset.url,
+      urls: list,
     })
   },
 })

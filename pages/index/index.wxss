@@ -71,3 +71,8 @@ font-size:32rpx;
 .tip>text{
   margin-left:10rpx;
 }
+
+/**表单**/
+.asked{
+  width: 100%;
+}

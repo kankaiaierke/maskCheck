@@ -23,8 +23,27 @@
     </view>
     </view>
   </view>
-  <view class="main" hidden="{{showType == 1}}">
-    
+  <view class="asked" hidden="{{showType == 1}}">
+    <view>
+    <view class="page__bd">
+        <wux-form id="wux-form" bind:change="formChange">
+            <wux-cell-group title="Switch">
+                <wux-cell>
+                    <wux-field name="switch" initialValue="{{ switch }}" valuePropName="inputChecked" slot="footer">
+                        <wux-switch />
+                    </wux-field>
+                </wux-cell>
+            </wux-cell-group>
+            <wux-cell-group title="Textarea">
+                <wux-cell hover-class="none">
+                    <wux-field name="textarea" initialValue="456">
+                        <wux-textarea rows="3" />
+                    </wux-field>
+                </wux-cell>
+            </wux-cell-group>
+        </wux-form>
+    </view>
+</view>
   </view>
   <wux-tabbar defaultCurrent="tab1" theme="positive" position="bottom" safeArea>
     <wux-tabbar-item key="tab1" title="图片检测" bindtap='showTypeChange' data-index="1">

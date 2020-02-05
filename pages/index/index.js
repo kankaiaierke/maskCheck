@@ -56,7 +56,6 @@ Page({
     })
   },
   showTypeChange(e){
-    console.log(e);
     this.setData({
       showType: e.currentTarget.dataset.index
     })

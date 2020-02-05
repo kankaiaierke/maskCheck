@@ -7,7 +7,7 @@ Page({
     imgList:[],
     isValve:false,
     showType:1,
-    formData:{},
+    answer:{},
     //表单数据数组
     askData:[
       {
@@ -37,7 +37,7 @@ Page({
   onLoad: function () {
     //测试数据
     this.setData({
-      formData: {
+      answer: {
         '1': 'A',
         '2': 'A',
       },
@@ -122,12 +122,25 @@ Page({
     console.log('onChange \n', changedValues, allValues)
     //表单改变的时候修改数据
     this.setData({
-      formData: allValues
+      answer: allValues
     })
   },
   //提交
   onSubmit(){
-    console.log(this.data.formData);
+    console.log(this.data.answer);
+    wx.request({
+      url: 'https://recognitionapi.yuanjy.com/v1/index/recognition', //仅为示例，并非真实的接口地址
+      data: {
+        image:'',
+        answer: this.data.answer,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+    })
   },
   //预览
   onPreview(e) {

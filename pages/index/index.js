@@ -31,7 +31,10 @@ Page({
             value: 'C',
             name: '比较重的异味'
           },
-        ]
+        ],
+        imageList:[
+
+        ],
       },
       {
         id: '2',
@@ -50,7 +53,8 @@ Page({
             value: 'C',
             name: '有一些模糊'
           },
-        ]
+        ],
+        imageList:['https://hd2-health-out.oss-cn-shanghai-finance-1-pub.aliyuncs.com/guohua/2020-02-05/999de7071638381e164283397cc820e3.jpg'],
       },
     ],
     smellShow:true,

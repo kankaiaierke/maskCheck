@@ -29,11 +29,25 @@
         <view class="sub-title"></view>
         <wux-form id="wux-form" bind:change="onChange">
             <view wx:for="{{askData}}" wx:for-item="item">
-              <wux-field name="{{item.key}}" initialValue="{{ formData[item.key] }}">
-                  <wux-radio-group title="{{item.title}}">
+              <wux-wing-blank size="default">
+                  <wux-card title="{{item.title}}" extra="">
+                      <view slot="body">
+                        <wux-row wx:for="{{item.imageList}}" wx:for-item="image">
+                            <wux-col span="4">
+                                <wux-image wux-class="image" src="{{image}}" loading="Loading" />
+                            </wux-col>
+                        </wux-row>
+                        <wux-field name="{{item.key}}" initialValue="{{ formData[item.key] }}">
+                  <wux-radio-group title="">
                       <wux-radio wx:for="{{item.options}}" wx:for-item="option" title="{{option.name}}" value="{{option.value}}" />
                   </wux-radio-group>
               </wux-field>
+                      </view>
+                      <view slot="footer">
+                      </view>
+                  </wux-card>
+              </wux-wing-blank>
+              
             </view>
             <view class="btn-area">
                 <button class="submit" bindtap="onSubmit">提交</button>

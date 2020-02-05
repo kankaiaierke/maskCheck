@@ -78,6 +78,10 @@ font-size:32rpx;
   margin-top: -200rpx;
 }
 
+.btn-area{
+  padding: 20rpx;
+}
+
 .btn-area button{
   width: 100%;
   color :#555;
@@ -86,4 +90,14 @@ font-size:32rpx;
 .btn-area .submit{
   color:#fff;
   background:#bbe1fa; 
+}
+
+.image {
+    width: 100% !important;
+    height: auto !important;
+    padding-bottom: 100% !important;
+}
+
+.wux-card{
+  margin-top: 20rpx;
 }

@@ -28,18 +28,9 @@
     <view class="page__bd">
         <view class="sub-title"></view>
         <wux-form id="wux-form" bind:change="onChange">
-            <wux-field hidden="{{!smellShow}}" name="smell" initialValue="{{ formData.smell }}">
-                <wux-radio-group title="口罩有无异味">
-                    <wux-radio title="没有" value="A" />
-                    <wux-radio title="有一点" value="B" />
-                    <wux-radio title="比较重的异味" value="C" />
-                </wux-radio-group>
-            </wux-field>
-            <wux-field hidden="{{!clearShow}}" name="clear" initialValue="{{ formData.clear }}">
-                <wux-radio-group title="口罩标准是否清晰">
-                    <wux-radio title="很清晰" value="A" />
-                    <wux-radio title="较清晰" value="B" />
-                    <wux-radio title="有一些模糊" value="C" />
+            <wux-field wx:for="{{askData}}" wx:for-item="item" name="{{item.key}}" initialValue="{{ formData[item.key] }}">
+                <wux-radio-group title="{{item.title}}">
+                    <wux-radio wx:for="{{item.options}}" wx:for-item="option" title="{{option.name}}" value="{{option.value}}" />
                 </wux-radio-group>
             </wux-field>
             <wux-cell-group title="备注">

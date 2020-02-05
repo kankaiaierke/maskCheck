@@ -12,6 +12,46 @@ Page({
       clear: 'A',
       memo: '',
     },
+    askData:[
+      {
+        id:'1',
+        title:'口罩有无异味',
+        key:'smell',
+        options:[
+          {
+            value:'A',
+            name:'没有'
+          },
+          {
+            value: 'B',
+            name: '有一点'
+          },
+          {
+            value: 'C',
+            name: '比较重的异味'
+          },
+        ]
+      },
+      {
+        id: '2',
+        title: '口罩标准是否清晰',
+        key: 'clear',
+        options: [
+          {
+            value: 'A',
+            name: '很清晰'
+          },
+          {
+            value: 'B',
+            name: '较清晰'
+          },
+          {
+            value: 'C',
+            name: '有一些模糊'
+          },
+        ]
+      },
+    ],
     smellShow:true,
     clearShow:true,
   },

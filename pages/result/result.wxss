@@ -61,6 +61,8 @@
 }
 
 .res-text {
+  margin: 0 30rpx 0 30rpx;
+  text-align: center;
   color: #fff;
   padding: 20rpx;
 }

@@ -89,6 +89,8 @@ font-size:32rpx;
 .pop-content>p{
   width: 100%;
   text-align: left;
+  height: 80rpx;
+  line-height: 80rpx;
 }
 
 /**表单**/

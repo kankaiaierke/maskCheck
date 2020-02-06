@@ -3,6 +3,13 @@
     <view class="card-2 flex">
       <view class="card-3 flex">
         <wux-icon type="{{isSure?'ios-checkmark-circle':'ios-alert'}}" size="100" color="{{isSure?'#FFBBD0':'#ffd082'}}" />
+        <view class="title" style="color:{{isSure?'#FFBBD0':'#ffd082'}}">{{isSure?'检测通过！':'存在可疑?'}}</view>
+        <view class="desc" style="color:{{isSure?'#FFBBD0':'#ffd082'}}">
+        {{isSure?'请放心使用!':'可填写问卷更准确识别！'}}
+        </view>
+        <view class="tip flex" style="color:#ffd082" wx:if="!isSure" bindtap="toWrite">
+        <text>填写问卷</text><wux-icon type="ios-arrow-dropright" size="20"/>
+        </view>
       </view>
     </view>
   </view>

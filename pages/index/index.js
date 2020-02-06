@@ -8,7 +8,7 @@ import { $wuxToast } from '../../dist/index'
 Page({
   data: {
     imgList:[],
-    isValve:false,
+    isValve:true,
     showType:1,
     answer:{},
     visible: false,
@@ -39,7 +39,9 @@ Page({
     ],
   },
   onLoad: function () {
+    
     var that = this;
+    // 加载请求数据
     wx.request({
       url: 'https://recognitionapi.yuanjy.com/v1/index/question-info', //问题
       header: {

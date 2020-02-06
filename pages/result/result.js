@@ -19,17 +19,15 @@ Page({
       })
     }
   },
-  onClick(e) {
-    console.log(e)
-    const {
-      index
-    } = e.detail
-
-    index === 0 && wx.showModal({
-      title: 'Thank you for your support!',
-      showCancel: !1,
+  toWrite(){
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2]; //上一个页面
+    prevPage.setData({
+      showType:2
     })
-
-    index === 1 && wx.navigateBack()
-  },
+    wx.navigateBack({
+      url: '../index/index',
+      delta:1
+    })
+  }
 })

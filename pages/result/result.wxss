@@ -72,11 +72,13 @@
 .desc {
   text-align: center;
   font-size: 40rpx;
+  color:#ffffff;
 }
 .tip{
   margin-top: 20rpx;
   font-size:40rpx;
   flex-flow: row;
+  color:#ffffff;
 }
 .tip>text{
   margin-right:10rpx;

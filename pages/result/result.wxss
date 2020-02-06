@@ -32,3 +32,33 @@
 
   border-radius: 20rpx;
 }
+
+/* 问卷结果*/
+
+.res-ball{
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 200rpx;
+  font-size: 50rpx;
+  color:#fff;
+  margin: 0 auto;
+}
+
+.great{
+  background: #9eea6a;
+}
+
+.common{
+  background: #e8a400;
+}
+
+.danger{
+  background: #f00;
+}
+
+.res-text{
+  color: #fff;
+  padding: 20rpx;
+}

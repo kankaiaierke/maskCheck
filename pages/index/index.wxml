@@ -29,9 +29,9 @@
   </view>
   <wux-popup position="bottom" closable visible="{{ visible }}" title="友情提示" bind:close="handleClose">
     <view class="pop-content flex">
-      <p>1. xxxxx</p>
-      <p>2. xxxxx</p>
-      <p>3. xxxxx</p>
+      <p>一、 带呼吸阀口罩请按下面操作完成检测</p>
+      <p>1. 拍照或上传图片，预览/编辑截图出呼吸阀上的字样如下图</p>
+      <view class="example-image flex"> <wux-image bindtap='onPreview'  src="../../assets/images/example.jpg" /> <wux-image bindtap='onPreview'  src="../../assets/images/example_upload.jpg" /></view>
       <p>4. xxxxx</p>
       <wux-button bordered full block bindtap="handleClose">ok</wux-button>
     </view>

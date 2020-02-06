@@ -139,6 +139,7 @@ Page({
   onSubmit(){
     console.log(this.data.answer);
     var answer = this.data.answer;
+    wx.showToast({ icon: "loading", title: "提交问卷……" });
     wx.request({
       url: 'https://recognitionapi.yuanjy.com/v1/index/recognition-question', //仅为示例，并非真实的接口地址
       method: "POST",
@@ -149,7 +150,24 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
+        if (res.statusCode != 200) {
+          wx.showModal({ title: '提示', content: '提交出错，请重新提交！', showCancel: false });
+          return;
+        } else {
+          console.log(res.data)
+          var resultCode = res.data.code;
+          if (resultCode == -1){
+            wx.showModal({ title: '提示', content: '提交出错，请重新提交！', showCancel: false });
+            return;
+          }
+          wx.navigateTo({
+            url: `../result/result?resultCode=${resultCode}&from=question`,
+          })
+        }
+      },
+      complete() {
+        console.log('complete')
+        wx.hideToast(); //隐藏Toast
       }
     })
   },

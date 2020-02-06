@@ -120,7 +120,6 @@ Page({
         wx.showModal({ title: '提示', content: '上传失败，请重新上传', showCancel: false });
       },
       complete() {
-        wx.hideToast(); //隐藏Toast
       }
     })
   },

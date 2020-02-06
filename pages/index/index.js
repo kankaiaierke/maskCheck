@@ -160,8 +160,10 @@ Page({
             wx.showModal({ title: '提示', content: '提交出错，请重新提交！', showCancel: false });
             return;
           }
+          var real_rate = res.data.data.real_rate;
+          var message = res.data.data.remark.join(',');
           wx.navigateTo({
-            url: `../result/result?resultCode=${resultCode}&from=question`,
+            url: `../result/result?resultCode=${resultCode}&from=question&real_rate=${real_rate}&message=${message}`,
           })
         }
       },

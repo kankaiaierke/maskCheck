@@ -97,7 +97,7 @@ font-size:32rpx;
 .asked{
   background:#fff;
   width: 100%;
-  padding:10rpx 0 120rpx;
+  padding:10rpx 0 180rpx;
 }
 
 .btn-area{
